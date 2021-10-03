@@ -92,7 +92,42 @@
 
 // アロー関数
 // 足し算例
-const func3 = (num1, num2) => {
-  return num1 + num2;
-};
-console.log(func3(10, 20));
+// const func3 = (num1, num2) => {
+//   return num1 + num2;
+// };
+// console.log(func3(10, 20));
+
+/**
+ * 分割代入
+ */
+
+// テンプレート文字列ver
+// const myProfile = {
+//   name: "じゃけぇ",
+//   age: 28,
+// };
+
+// const message1 = `名前は${myProfile.name}です。年齢は${myProfile.age}です。`;
+// console.log(message1);
+
+// 分割代入ver
+// const myProfile = {
+//   name: "じゃけぇ",
+//   age: 28,
+// };
+
+// const { name, age  } = myProfile;
+// const message2 = `名前は${name}です。年齢は${age}です。`;
+// console.log(message2);
+
+// テンプレート文字列配列ver
+// const myProfile = ['じゃけぇ', 28];
+// const message3 = `名前は${myProfile[0]}です。年齢は${myProfile[1]}です。`;
+// console.log(message3);
+
+// 分割代入配列ver
+// 順番が大事
+const myProfile = ["じゃけぇ", 28];
+const [name, age] = myProfile;
+const message4 = `名前は${name}です。年齢は${age}です。`;
+console.log(message4);
