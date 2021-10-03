@@ -169,18 +169,111 @@
 // console.log(arr3);
 
 // 配列のコピー、結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 
-// コピー
-const arr6 = [...arr4];
-console.log(arr6);
-// 結合
-const arr7 = [...arr4, ...arr5];
-console.log(arr7);
+// // コピー
+// const arr6 = [...arr4];
+// console.log(arr6);
+// // 結合
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
 
 // // =でコピーは問題あり 上書きすると..コピー元の配列を破壊してしまう。
 // // よってスプレット構文でコピーするべし
 // const arr8 = arr4;
 // console.log(arr8);
 // arr8[0] = 100;
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+
+//  旧来のやり方
+// const nameArr = ["田中", "山田", "じゃけぇ"];
+// for (let index = 0; index < nameArr.length; index++){
+// console.log(`${index + 1}番目は${nameArr[index]}です`);
+// }
+
+// mapで同じことをしてみる
+// const nameArr = ["田中", "山田", "じゃけぇ"];
+// const nameArr2 = nameArr.map( (name) => {
+//  return name;
+// })
+// console.log(nameArr2);
+
+// nameという名前の仮引数となって、順番に処理する
+// nameArr.map((name) => console.log(name));
+
+// mapの中でindexありいしたい時は第二引数にindexをとる。nameがRubyの|r|みたいなものなので
+// nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です。`));
+
+// filter ある条件に一致したもののみ返す
+// const numArr = [1,2,3,4,5];
+// const newNumArr = numArr.filter((num) =>{
+//   return num % 2 === 1;
+// });
+// console.log(newNumArr);
+
+// じゃけぇ以外に さん をつける
+// const nameArr = ["田中", "山田", "じゃけぇ"];
+// const newNameArr = nameArr.map((name) => {
+//   if (name == "じゃけぇ") {
+//     return name
+//   } else {
+//     return `${name}さん`
+//   }
+// });
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+
+// ある条件　 ? 条件がtrueの時 : 条件がfalseの時
+
+// const val1 = 1 > 0 ? 'trueです' : 'falseです';
+// console.log(val1);
+
+// toLocaleStringは３桁区切りで,つけるJSの関数。金額表示とかで使える。
+// const num = 1300;
+// console.log(num.toLocaleString());
+
+// const num = "aa";
+// const formattedNum = typeof num === 'number' ? num.toLocaleString() : '数値を入力してください';
+// console.log(formattedNum);
+
+// const checkSum = (num1,num2) => {
+//   return num1 + num2 > 100 ? '100を超えています!!' : '許容範囲内です'
+// }
+
+// console.log(checkSum(50,60));
+// console.log(checkSum(50,40));
+
+/**
+ * 論理演算子の本当の意味を知ろう
+ */
+
+//  const flag1 = true;
+//  const flag2 = false;
+// //  const flag2 = true;
+
+//  if (flag1 || flag2) {
+//    console.log("1か２はtrueになります");
+//  }
+
+//  if (flag1 && flag2) {
+//   console.log("1も２もtrueになります");
+// }
+
+// ||は左側がfalseなら右側を返す
+// // const num2 = 100;
+// const num = null;
+// const fee = num || "金額未設定です";
+// console.log(fee);
+
+// // &&は左側がtrueなら右側を返す
+// // const num2 = 100;
+// const num = null;
+// const fee2 = num2 && "何か設定されました"
+// console.log(fee2);
