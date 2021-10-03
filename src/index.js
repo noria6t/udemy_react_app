@@ -127,7 +127,20 @@
 
 // 分割代入配列ver
 // 順番が大事
-const myProfile = ["じゃけぇ", 28];
-const [name, age] = myProfile;
-const message4 = `名前は${name}です。年齢は${age}です。`;
-console.log(message4);
+// const myProfile = ["じゃけぇ", 28];
+// const [name, age] = myProfile;
+// const message4 = `名前は${name}です。年齢は${age}です。`;
+// console.log(message4);
+
+/**
+ * デフォルト値、引数
+ */
+
+// const sayHello = (name) => console.log(`こんにちは${name}さん。`);
+// // sayHello("じゃけぇ");
+// // 初期値がないとundefinedになる
+// sayHello();
+
+// デフォルト値設定
+const sayHello = (name = "ゲスト") => console.log(`こんにちは${name}さん。`);
+sayHello();
